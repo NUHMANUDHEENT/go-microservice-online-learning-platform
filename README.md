@@ -1,4 +1,4 @@
-# Online Learning Platform
+# Online Learning Platform microservice(basic)
 
 This project is an online learning platform that leverages microservices architecture using gRPC for communication between services. The platform includes three main services:
 
