@@ -14,15 +14,10 @@ Each service is designed to be isolated and independently deployable, communicat
   - [User Service](#user-service)
   - [Course Service](#course-service)
   - [Enrollment Service](#enrollment-service)
-- [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running Services](#running-services)
 - [gRPC Protobuf Definitions](#grpc-protobuf-definitions)
 - [Testing](#testing)
   - [Using grpcurl](#using-grpcurl)
 - [Project Structure](#project-structure)
-- [Using Go Kit](#using-go-kit)
 
 ## Services
 
@@ -38,52 +33,14 @@ The Course Service handles course information, including course creation, update
 
 The Enrollment Service manages enrollments of users in courses. It ensures users and courses exist before enrolling.
 
-## Setup
 
 ### Prerequisites
 
-- Go 1.18+
+- Go 1.22
 - Docker
 - Protocol Buffers Compiler (`protoc`)
 - grpcurl (for testing)
 
-### Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/online-learning-platform.git
-    cd online-learning-platform
-    ```
-
-2. Install dependencies for each service:
-    ```sh
-    cd user-service
-    go mod tidy
-    cd ../course-service
-    go mod tidy
-    cd ../enrollment-service
-    go mod tidy
-    ```
-
-### Running Services
-
-1. Start the User Service:
-    ```sh
-    cd user-service
-    go run cmd/main.go
-    ```
-
-2. Start the Course Service:
-    ```sh
-    cd course-service
-    go run cmd/main.go
-    ```
-
-3. Start the Enrollment Service:
-    ```sh
-    cd enrollment-service
-    go run cmd/main.go
-    ```
 
 ## gRPC Protobuf Definitions
 
