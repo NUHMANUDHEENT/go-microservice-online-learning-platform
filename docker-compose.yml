@@ -1,0 +1,32 @@
+version: '3'
+services:
+  user-service:
+    build:
+      context: .
+      dockerfile: user-service/Dockerfile
+    ports:
+      - "50051:50051"
+    networks:
+      - app-network
+
+  course-service:
+    build:
+      context: .
+      dockerfile: course-service/Dockerfile
+    ports:
+      - "50052:50052"
+    networks:
+      - app-network
+
+  enrollment-service:
+    build:
+      context: .
+      dockerfile: enrollment-service/Dockerfile
+    ports:
+      - "50053:50053"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

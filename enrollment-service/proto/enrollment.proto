@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package enrollment;
+
+option go_package = "github.com/nuhmanudheent/online-learning-platform/enrollment-service/proto";
+
+service EnrollmentService {
+  rpc EnrollUser (EnrollRequest) returns (EnrollResponse);
+  rpc GetEnrollmentsByUser (UserIDRequest) returns (EnrollmentsResponse);
+  rpc GetEnrollmentsByCourse (CourseIDRequest) returns (EnrollmentsResponse);
+}
+
+message EnrollRequest {
+  string userId = 1;
+  string courseId = 2;
+}
+
+message EnrollResponse {
+  string message = 1;
+}
+
+message UserIDRequest {
+  string userId = 1;
+}
+
+message CourseIDRequest {
+  string courseId = 1;
+}
+
+message Enrollment {
+  string userId = 1;
+  string courseId = 2;
+}
+
+message EnrollmentsResponse {
+  repeated Enrollment enrollments = 1;
+}

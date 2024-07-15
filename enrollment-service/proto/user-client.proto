@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/nuhmanudheent/online-learning-platform/enrollment-service/proto";
+
+service UserService {
+  rpc GetProfile(ProfileRequest) returns (ProfileResponse);
+}
+
+message ProfileRequest {
+  string userId = 1;
+}
+
+message ProfileResponse {
+  string userId = 1;
+  string username = 2;
+  string email = 3;
+}
